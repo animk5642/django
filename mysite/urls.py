@@ -16,10 +16,14 @@ Including anoome/ther URLconf
 from django.contrib import admin
 from django.urls import path
 from mysite import views
-
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('home/',views.home),
-    path('myhome/',views.home2)
+    path('', views.home),
+    path('myhome/', views.home2)
 ]
+
+
+# WE NEED TO ADD CONFIGURATION FOR MEDIA ALSO
