@@ -24,7 +24,7 @@ SECRET_KEY = 'django-insecure-_+772kfjn+i8_@)ig1#w0av()zd)q95_53l!hz1*#exi3#=%h8
 
 # SECURITY WARNING: don't run with debug turned on in production!<
 DEBUG = True
- 
+
 ALLOWED_HOSTS = []
 
 
@@ -54,7 +54,7 @@ ROOT_URLCONF = 'mysite.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['template'],
+        'DIRS': ['template'],  # templete folder is name
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -117,9 +117,12 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = '/static1/'
 
-# Default primary key field type
-# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
+STATICFILES_DIRS = [
+    BASE_DIR / "static1"
+
+]
+# https://docs.dAjangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
