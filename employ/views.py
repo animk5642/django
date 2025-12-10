@@ -5,7 +5,14 @@ from django.http import Http404,HttpResponse
 def employ_details(request,id):
        try:
            employee = Employee.objects.get(id =id)
-           return HttpResponse(employee)
+           content ={
+                 
+             'employees':employee
+
+           }
+
+
+           return render(request,'employ_details.html',content)
        except:
              raise Http404
              

@@ -21,33 +21,29 @@
 <body>
 
 
-  <div class="container" id="table1">
+<div class="d-flex justify-content-center mt-5">
+    <div class="card" style="width: 18rem;">
+      <img class="card-img-top" src="{{ employees.photo.url }}" alt="Card image cap">
+      <div class="card-body">
+        <p class="card-text mt-0 mb-0">
+          {{employees.first_name}}{{employees.last_name}}
+        </p>
+        <p class="card-text  mb-0">
+          {{employees.designation}}
+        </p>
 
+           <p class="card-text mt-0">
+          {{employees.number}}
+        </p>
+        
+      </div>
+    </div>
 
-    <h1>Employ list</h1>
-    <table class="table">
-      <thead>
-        <tr>
-          <th scope="col">#</th>
-          <th scope="col">Full Name</th>
-          <th scope="col">Designation</th>
-          <th scope="col">Phone Number</th>
-        </tr>
-      </thead>
-      <tbody>
-        {% for emp in employees %}
-        <tr>
-          <th scope="row">{{forloop.counter}}</th>
-           <td>
-    <a href="{% url 'details' emp.id %}">
-        {{ emp.first_name }} {{ emp.last_name }}
-    </a>
-</td>
+  <!-- reffering a url for redirecting in django -->
+<a href="{% url 'home' %}" class="btn btn-info" role="button">Link Button</a>
+    
+</div>
 
-          <td>{{emp.designation}} </td>
-          <td>{{emp.number}}</td>
-        </tr>
-        {% endfor %}
         
 
 

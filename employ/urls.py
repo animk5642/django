@@ -7,5 +7,5 @@ from django.conf.urls.static import static
 
 urlpatterns = [
   
-    path('<int:id>/',views.employ_details)
+    path('employees/<int:id>/',views.employ_details,name='details')
 ]
