@@ -10,7 +10,7 @@ def home(request):
     emloyess=Employee.objects.all()
     emplo ={
 
-       'employees':emloyess,
+       'employees':emloyess,#used to store key value
 
 
     }

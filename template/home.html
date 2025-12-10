@@ -1,4 +1,4 @@
-{%load static %}
+{% load static %}
 
 
 <!doctype html>
@@ -13,11 +13,12 @@
   <title>Bootstrap demo</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-  <link rel="stylesheet" href="/static1/css/style.css">
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
 
 </head>
 
-<body>static1/css/style.css
+<body>
 
 
   <div class="container" id="table1">
@@ -28,36 +29,21 @@
       <thead>
         <tr>
           <th scope="col">#</th>
-          <th scope="col">First</th>
-          <th scope="col">Last</th>
-          <th scope="col">Handle</th>
+          <th scope="col">Full Name</th>
+          <th scope="col">Designation</th>
+          <th scope="col">Phone Number</th>
         </tr>
       </thead>
       <tbody>
+        {% for emp in employees %}
         <tr>
-          <th scope="row">1</th>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>@mdo</td>
+          <th scope="row">{{forloop.counter}}</th>
+          <td>{{emp.first_name}} {{emp.last_name}}</td>
+          <td>{{emp.designation}} </td>
+          <td>{{emp.number}}</td>
         </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>Jacob</td>
-          <td>Thornton</td>
-          <td>@fat</td>
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td>John</td>
-          <td>Doe</td>
-          <td>@social</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <img src="/static1/images/download.png" alt="error" width="400" style="margin-left: 20px;">
-
+        {% endfor %}
+        
 
 
 
@@ -66,6 +52,10 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
     crossorigin="anonymous"></script>
+
+    
+        
+     
 </body>
 
 </html>
